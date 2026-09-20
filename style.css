@@ -1,0 +1,526 @@
+/* ------ RÉINITIALISATION DE BASE ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222222;
+  line-height: 1.6;
+}
+
+/* ----- VARIABLES DE COULEUR ---- */
+:root {
+  --couleur-fond: #ffffff;
+  --couleur-texte: #222222;
+  --couleur-accent: #1a3c6e;
+  --couleur-accent-clair: #2c5aa0;
+  --couleur-fond-section: #f5f6f8;
+  --couleur-bordure: #dddddd;
+}
+
+/* ----- EN-TÊTE (HEADER) ----- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: var(--couleur-fond);
+  border-bottom: 1px solid var(--couleur-bordure);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--couleur-accent);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--couleur-texte);
+  font-weight: 500;
+  
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--couleur-accent);
+}
+
+/* Bouton hamburger : caché par défaut (visible seulement en mobile, voir plus bas) */
+.bouton-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ----- BOUTONS (RÉUTILISABLES PARTOUT) -----*/
+.bouton {
+  display: inline-block;
+  padding: 12px 28px;
+  min-height: 44px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.bouton-primaire {
+  background-color: var(--couleur-accent);
+  color: #ffffff;
+  border: 2px solid;
+  
+}
+
+.bouton-primaire:hover {
+  background-color: var(--couleur-accent-clair);
+  border: var(--couleur-accent-clair);
+}
+
+.bouton-secondaire {
+  background-color: transparent;
+  border-color: var(--couleur-accent);
+  color: var(--couleur-accent);
+}
+
+.bouton-secondaire:hover {
+  background-color: var(--couleur-fond-section);
+  border-color: var(--couleur-accent-clair);
+}
+
+/* ===== SECTION ACCUEIL (HERO) ===== */
+#accueil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenu-accueil h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.titre-poste {
+  font-size: 20px;
+  color: var(--couleur-accent);
+  margin-bottom: 16px;
+}
+
+.intrduction-poste {
+  font-size: 16px;
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+
+.bouton-accueil {
+  display: flex;
+  gap: 16px;
+}
+
+.image-accueil {
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* ===== SECTION À PROPOS ===== */
+#apropos {
+  padding: 64px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#apropos h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.contenu-apropos {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.image-apropos {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  background-color: var(--couleur-fond-section);
+  border: 1px solid var(--couleur-bordure);
+  flex-shrink: 0;
+}
+
+
+.contenu-apropos p {
+  font-size: 16px;
+}
+
+mise-form {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--couleur-accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.grille-info-apropos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+  max-width: 420px;
+}
+ 
+.carte-info {
+  background-color: var(--couleur-fond-section);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+ 
+.info-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666666;
+  margin-bottom: 4px;
+}
+ 
+.info-titre {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+ 
+.info-sous-titre {
+  font-size: 12px;
+  color: #555555;
+}
+
+
+/* ---- SECTION COMPÉTENCES ---- */
+
+#competence {
+  padding: 64px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+#competence h2 {
+  font-size: 24px;
+}
+ 
+.entete-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+ 
+.badge {
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  color: #555555;
+  white-space: nowrap;
+}
+ 
+.grille-competence {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+ 
+.carte-competence {
+  background-color: var(--couleur-fond-section);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icône unique, identique sur les 7 cartes */
+
+.icone {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 6px;
+}
+ 
+.competence-num {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5c5c5c;
+  margin-bottom: 4px;
+}
+ 
+.competence-titre {
+  font-size: 16px;
+  font-weight: 700;
+}
+ 
+.pied-competence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--couleur-bordure);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #666666;
+}
+ 
+.pied-competence .statut {
+  background-color: #ffffff;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+/* ------ SECTION PROJETS ----- */
+#projets {
+  padding: 64px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#projets h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.grille-projets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cartes-projets {
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-projets {
+  width: 100%;
+  height: 160px;
+  background-color: var(--couleur-fond-section);
+}
+
+.cartes-projets h3 {
+  font-size: 18px;
+  margin: 16px 16px 8px;
+}
+
+.cartes-projets p {
+  font-size: 16px;
+  margin: 0 16px 16px;
+}
+
+.etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0 16px 16px;
+}
+
+.etiquettes li {
+  background-color: var(--couleur-fond-section);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+/* ----- SECTION CONTACT ----- */
+#contact {
+  padding: 64px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.contenu-contact {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+#Formulaire-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+#formulaire-contact label {
+  font-weight: 500;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+#Formulaire-contact input,
+#Formulaire-contact textarea {
+  padding: 10px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+#Formulaire-contact textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#Formulaire-contact button {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.retour-formulaire {
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.coordonnées {
+  background-color: var(--couleur-fond-section);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.coordonnées p:first-child {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* ===== PIED DE PAGE (FOOTER) ===== */
+footer {
+  background-color: var(--couleur-accent);
+  color: #ffffff;
+  text-align: center;
+  padding: 32px;
+}
+
+.réseaux {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.réseaux a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ----------------------------------------------------------
+   BREAKPOINT 1 : TABLETTE (écrans ≤ 1024px)
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .grille-competence {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grille-projets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------
+   BREAKPOINT 2 : MOBILE (écrans ≤ 640px)
+   --------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* Le menu horizontal se cache, le bouton hamburger apparaît */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--couleur-fond);
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding: 16px 32px;
+    gap: 16px;
+  }
+
+  /* Classe ajoutée en JavaScript quand on clique sur le hamburger */
+  nav ul.menu-ouvert {
+    display: flex;
+  }
+
+  .bouton-menu {
+    display: block;
+  }
+
+  /* Toutes les sections passent en une seule colonne */
+  #accueil {
+    flex-direction: column;
+    text-align: center;
+    padding: 48px 20px;
+  }
+
+  .intrduction-poste  {
+    max-width: 100%;
+  }
+
+  .bouton-accueil {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contenu-apropos {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grille-competence {
+    grid-template-columns: 1fr;
+  }
+
+  .grille-projets {
+    grid-template-columns: 1fr;
+  }
+
+  .contenu-contact {
+    grid-template-columns: 1fr;
+  }
+}
